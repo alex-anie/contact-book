@@ -1,5 +1,5 @@
 <x-layout>
-    <x-nav>Contact Lists</x-nav>
+    <x-nav>Contact Lists </x-nav>
     <main class="w-[40%] mx-auto mt-10 space-y-2">
             <section class="w-full">
                 <a href="show/1" 

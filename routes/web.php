@@ -1,10 +1,9 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [ContactController::class, 'index']);
 
 Route::get('/create', function () {
     return view('create');
