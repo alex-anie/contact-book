@@ -2,18 +2,10 @@
 
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Contact;
 
 Route::get('/', [ContactController::class, 'index']);
-
-Route::get('/create', function () {
-    return view('create');
-});
-
-Route::get('/show/{id}', function () {
-    return view('show');
-});
-
-Route::get('/edit', function () {
-    return view('edit');
-});
+Route::get('/create', [ContactController::class, 'create']);
+Route::get('/show/{id}', [ContactController::class, 'show']);
+Route::get('/edit', [ContactController::class, 'edit']);
 

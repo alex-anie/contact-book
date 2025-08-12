@@ -1,44 +1,24 @@
 <x-layout>
     <x-nav>Contact Lists </x-nav>
     <main class="w-[40%] mx-auto mt-10 space-y-2">
-            <section class="w-full">
-                <a href="show/1" 
-                class="w-full flex items-center gap-4 p-4 bg-white rounded-xl shadow hover:shadow-md transition">
-                    <!-- First letter as an avatar -->
-                    <p class="flex items-center justify-center w-12 h-12 bg-blue-500 text-white text-lg font-bold rounded-full">
-                        A
-                    </p>
-                    <!-- Contact name -->
-                    <p class="text-gray-800 font-medium">Alex Anie</p>
-                </a>
-            </section>
 
+        @foreach($contacts as $contact)
             <section class="w-full">
-                <a href="show/2" 
+                <a href="show/{{ $contact->id }}" 
                 class="w-full flex items-center gap-4 p-4 bg-white rounded-xl shadow hover:shadow-md transition">
                     <!-- First letter as an avatar -->
                     <p class="flex items-center justify-center w-12 h-12 bg-blue-500 text-white text-lg font-bold rounded-full">
-                        A
+                        {{ $contact->full_name[0] }}
                     </p>
                     <!-- Contact name -->
-                    <p class="text-gray-800 font-medium">Alex Anie</p>
+                    <p class="text-gray-800 font-medium">{{ $contact->full_name }}</p>
                 </a>
             </section>
+        @endforeach
 
-            <section class="w-full">
-                <a href="show/3" 
-                class="w-full flex items-center gap-4 p-4 bg-white rounded-xl shadow hover:shadow-md transition">
-                    <!-- First letter as an avatar -->
-                    <p class="flex items-center justify-center w-12 h-12 bg-blue-500 text-white text-lg font-bold rounded-full">
-                        A
-                    </p>
-                    <!-- Contact name -->
-                    <p class="text-gray-800 font-medium">Alex Anie</p>
-                </a>
-            </section>
         </main>
 
-        <section class="absolute right-20 bottom-20">
+        <section class="fixed right-20 bottom-20">
             <a href="/create">
             <span
                 class="flex items-center justify-center w-10 h-10 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">
