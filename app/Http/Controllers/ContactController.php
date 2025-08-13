@@ -10,7 +10,7 @@ class ContactController extends Controller
     public function index(){
 
        return view('index', [
-        'contacts' =>  Contact::orderBy('created_at', 'desc')->get()
+        'contacts' =>  Contact::orderBy('updated_at', 'desc')->get()
     ]);
     }
 
@@ -37,7 +37,7 @@ class ContactController extends Controller
         'full_name' => [
             'required',
             'min:2',
-            'max:15',
+            'max:50',
             'regex:/^[a-zA-Z\s\'\-]+$/'
         ],
 
@@ -87,7 +87,7 @@ class ContactController extends Controller
         'full_name' => [
             'required',
             'min:2',
-            'max:15',
+            'max:50',
             'regex:/^[a-zA-Z\s\'\-]+$/'
         ],
 
