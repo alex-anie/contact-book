@@ -1,5 +1,12 @@
 <x-layout>
 <x-nav>Details Page</x-nav>
+
+@if (session('success'))
+    <div class="bg-green-100 text-green-700 p-3 rounded-lg mb-4">
+        {{ session('success') }}
+    </div>
+@endif
+
 <main class="max-w-2xl mx-auto p-6 bg-white shadow rounded-xl space-y-6 mt-4">
     <!-- Header Section -->
     <section class="flex items-center gap-4 border-b pb-4">
@@ -22,7 +29,7 @@
             <span>Home</span>
         </a>
 
-        <a href="edit/{id}" 
+        <a href="/{{ $contact->id }}/edit" 
            class="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
             <span>
                 <!-- Edit Icon -->
