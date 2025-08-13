@@ -133,4 +133,13 @@ class ContactController extends Controller
         return redirect("/show/{$contact->id}")
         ->with('success', 'Contact updated successfully!');
     }
+
+    public function destroy($id){
+        $contact = Contact::findOrFail($id);
+
+        $contact->delete();
+
+       return redirect('/')
+        ->with('deleted', 'Contact successfully deleted');
+    }
 }

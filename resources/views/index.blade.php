@@ -1,6 +1,10 @@
 <x-layout>
     <x-nav>Contact Lists </x-nav>
     <main class="w-[40%] mx-auto mt-10 space-y-2">
+    
+    @if(session('deleted'))
+        <div class="bg-red-100 text-red-700 p-3 rounded-lg mb-4">{{ session('deleted') }}</div>
+    @endif
 
         @foreach($contacts as $contact)
             <section class="w-full">

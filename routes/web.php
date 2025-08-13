@@ -17,3 +17,5 @@ Route::patch('/{id}', [ContactController::class, 'update']);
 // Show single
 Route::get('/show/{id}', [ContactController::class, 'show']);
 
+// Delete
+Route::delete('/{id}', [ContactController::class, 'destroy']);
